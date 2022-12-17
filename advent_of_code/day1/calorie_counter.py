@@ -39,6 +39,6 @@ def all_calories():
             third = sum(all_calories[i])
 
     sorted_calories = [most, second, third]
-    return sum(sorted_calories)
+    return sorted_calories[0]
 
 all_calories()
