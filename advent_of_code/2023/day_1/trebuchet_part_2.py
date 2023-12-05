@@ -6,8 +6,13 @@ with open(file_path, 'r') as file:
     calibration_values = [line.strip() for line in file.readlines()]
 
 number_mapping = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9}
+overlaps = {'oneight':'oneeight', 'twone': 'twoone', 'threeight': 'threeeight', 'fiveight': 'fiveeight', 'sevenine': 'sevennine', 'eightwo': 'eighttwo', 'nineight':'nineeight'}
 
 def extract_first_and_last_numbers(input_string):
+
+    for key, value in overlaps.items():
+        input_string = input_string.replace(key, f'{key}{value}')
+
     for key, value in number_mapping.items():
         input_string = input_string.replace(key, f'{key}{value}')
 
@@ -20,9 +25,7 @@ def extract_first_and_last_numbers(input_string):
     return value
 
 sum = 0
-calibration_numbers = []
 for line in calibration_values:
     sum += extract_first_and_last_numbers(line)
-    calibration_numbers.append(extract_first_and_last_numbers(line))
 
 print(sum)
