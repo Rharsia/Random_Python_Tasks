@@ -17,8 +17,12 @@ for game in games:
 
 game_dict
 
-first_game = game_dict['Game 1'][0]
+for item in game_dict:
+    print(item)
+    print(game_dict[item])
 
+first_game = game_dict['Game 1'][0]
+first_game
 
 sets = first_game.split(';')
 
