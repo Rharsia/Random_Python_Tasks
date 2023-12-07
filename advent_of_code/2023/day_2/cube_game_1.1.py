@@ -9,3 +9,6 @@ games
 
 games_df = pd.DataFrame()
 
+for game in games:
+    print(game)
+    

@@ -33,9 +33,9 @@ sets
 first_pull = sets[0]
 first_pull
 
-cubes = first_pull.split(',')
-cubes
+set_1 = first_pull.split(',')
+set_1
 
-for cube_color in cubes:
+for cube_color in set_1:
     cube = cube_color.split()
     print(cube)
